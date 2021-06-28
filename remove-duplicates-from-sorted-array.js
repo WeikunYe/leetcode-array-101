@@ -14,7 +14,34 @@
     return nums.length;
 };
 
-var nums = [0,0,1,1,1,2,2,3,3,4];
-var result = removeDuplicates(nums);
 
-console.log(result);
+// Twp-pointer solution(TPS)
+
+var removeDuplicatesTPS = function(nums) {
+  
+    var writePointer = 1;
+
+    for(let readPointer = 1; readPointer<nums.length; readPointer++){
+
+        if(nums[readPointer] != nums[readPointer - 1]){
+
+            nums[writePointer] = nums[readPointer];
+
+            console.log(nums);
+
+            writePointer++;
+        }
+
+        //console.log(nums);
+    }
+
+    return writePointer;
+
+
+};
+
+var nums = [0,0,1,1,1,2,2,3,3,4];
+//var result = removeDuplicates(nums);
+var resultTPS = removeDuplicatesTPS(nums);
+
+console.log(resultTPS);
